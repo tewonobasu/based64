@@ -1,13 +1,28 @@
-(* (* let test_empty () =
-  Alcotest.(check string) "empty result is empty" "" Based64.C.Function.base64_encode  *)
+open Printf
+open Based64
+
+let rfc4648_tests =
+  [
+    ("", "");
+    ("f", "Zg==");
+    ("fo", "Zm8=");
+    ("foo", "Zm9v");
+    ("foob", "Zm9vYg==");
+    ("fooba", "Zm9vYmE=");
+    ("foobar", "Zm9vYmFy");
+  ]
+
+let test_rfc4648 () =
+  List.iter
+    (fun (c, r) ->
+      Alcotest.check Alcotest.string
+        (sprintf "encode %s" c) (encode c) r)
+        rfc4648_tests
+      (* Base64 vs test cases above *)
+      (* Alcotest.(check string) (sprintf "encode decode %s" c) (decode (encode c)) r *)
 
 let () =
-  let open Alcotest in
-  run "Utils" [
-      "string-case", [
-          test_case "Lower case"     `Quick test_lowercase;
-          test_case "Capitalization" `Quick test_capitalize;
-        ];
-      "string-concat", [ test_case "String mashing" `Quick test_str_concat  ];
-      "list-concat",   [ test_case "List mashing"   `Slow  test_list_concat ];
-    ] *)
+  let open Alcotest in 
+  run "Based64" [
+    "encode decode", [test_case "rfc4648" `Quick test_rfc4648;];
+  ]
