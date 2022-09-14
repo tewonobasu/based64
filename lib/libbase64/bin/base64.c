@@ -79,7 +79,7 @@ main (int argc, char **argv)
 	char src[] = "foobarfoobarfoobarfoobarfoobarfoobarfoobarfoobar";
 	int l = strlen(src);
 	char out[100];
-	char *out2 = malloc(100);
+	char *out2 = malloc(l * 2);
 	size_t srclen = sizeof(src) - 1;
 	size_t outlen;
 

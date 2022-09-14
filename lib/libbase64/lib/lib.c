@@ -151,23 +151,20 @@ base64_encode
 	}
 	#endif
 
-	puts("Before operations");
-
 	// Init the stream reader:
 	base64_stream_encode_init(&state, flags);
 
 	// Feed the whole string to the stream reader:
 	base64_stream_encode(&state, src, srclen, out, &s);
 
+
 	// Finalize the stream by writing trailer if any:
 	base64_stream_encode_final(&state, out + s, &t);
 
-	puts("After operations");
+
 
 	// Final output length is stream length plus tail:
 	*outlen = s + t;
-
-	puts("After addition");
 }
 
 int
