@@ -1,0 +1,4 @@
+(executable
+ (public_name toto)
+ (name main)
+ (libraries based64))
