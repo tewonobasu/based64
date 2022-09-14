@@ -1,0 +1,1 @@
+[Pour réexporter proprement les fonctions](https://github.com/cedlemo/ctypes-stubs-generation-notes)

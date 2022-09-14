@@ -73,12 +73,6 @@ void BASE64_EXPORT base64_encode
 	, int			 flags
 	) ;
 
-char* BASE64_EXPORT base64_encode_ret
-	( const char		*src
-	, size_t		 srclen
-	, int			 flags
-	) ;
-
 /* Call this before calling base64_stream_encode() to init the state. See above
  * for `flags`; set to 0 for default operation: */
 void BASE64_EXPORT base64_stream_encode_init
