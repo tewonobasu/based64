@@ -1,4 +1,4 @@
-(* let test_empty () =
+(* (* let test_empty () =
   Alcotest.(check string) "empty result is empty" "" Based64.C.Function.base64_encode  *)
 
 let () =
@@ -10,4 +10,4 @@ let () =
         ];
       "string-concat", [ test_case "String mashing" `Quick test_str_concat  ];
       "list-concat",   [ test_case "List mashing"   `Slow  test_list_concat ];
-    ]
+    ] *)

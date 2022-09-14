@@ -76,15 +76,53 @@ out:	fclose(fp);
 int
 main (int argc, char **argv)
 {
-	char src[] = "foobarfoobarfoobarfoobarfoobarfoobarfoobarfoobar";
-	int l = strlen(src);
-	char out[100];
-	char *out2 = malloc(l * 2);
-	size_t srclen = sizeof(src) - 1;
-	size_t outlen;
+	char *file;
+	FILE *fp;
+	int decode = 0;
 
-	base64_encode(src, srclen, out2, &outlen, 0);
+	// Parse options:
+	for (;;)
+	{
+		int c;
+		int opt_index = 0;
+		static struct option opt_long[] = {
+			{ "decode", 0, 0, 'd' },
+			{ 0, 0, 0, 0 }
+		};
+		if ((c = getopt_long(argc, argv, "d", opt_long, &opt_index)) == -1) {
+			break;
+		}
+		switch (c)
+		{
+			case 'd':
+				decode = 1;
+				break;
+		}
+	}
 
-	fwrite(out2, outlen, 1, stdout);
-	puts("");
+	// No options left on command line? Read from stdin:
+	if (optind >= argc) {
+		fp = stdin;
+	}
+
+	// One option left on command line? Treat it as a file:
+	else if (optind + 1 == argc) {
+		file = argv[optind];
+		if (strcmp(file, "-") == 0) {
+			fp = stdin;
+		}
+		else if ((fp = fopen(file, "rb")) == NULL) {
+			printf("cannot open %s\n", file);
+			return 1;
+		}
+	}
+
+	// More than one option left on command line? Syntax error:
+	else {
+		printf("Usage: %s <file>\n", argv[0]);
+		return 1;
+	}
+
+	// Invert return codes to create shell return code:
+	return (decode) ? !dec(fp) : !enc(fp);
 }

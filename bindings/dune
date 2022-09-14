@@ -9,7 +9,8 @@
   (build_flags_resolver
     (vendored
       (c_flags ("-Ilib" "-I."))))
-    (headers (include "libbase64.h"))
+    ; commenting this out fixed the build somehow
+    ;(headers (include "libbase64.h"))
     (type_description
       (instance Type)
       (functor Type_description))
