@@ -1,2 +1,3 @@
 (test
- (name ocaml_gpu_wordcount))
+ (name based64_test)
+ (libraries based64 alcotest))

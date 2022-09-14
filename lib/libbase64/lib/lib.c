@@ -161,8 +161,6 @@ base64_encode
 	// Finalize the stream by writing trailer if any:
 	base64_stream_encode_final(&state, out + s, &t);
 
-
-
 	// Final output length is stream length plus tail:
 	*outlen = s + t;
 }

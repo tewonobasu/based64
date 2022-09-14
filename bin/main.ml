@@ -1,7 +1,6 @@
 open Ctypes
 
 let () =
-  print_endline "at the start";
   let input = "foobar   foobar   foobar" in
   let out = CArray.make char ~initial:'\x00' (String.length input * 2) in
   let out_ptr = (CArray.start out) in

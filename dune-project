@@ -2,12 +2,12 @@
 (using ctypes 0.1)
 (formatting (enabled_for ocaml))
 
-(name ocaml_ctypes_example)
+(name based64)
 
 (generate_opam_files true)
 
 (source
- (github username/reponame))
+ (github tewonobasu/based64))
 
 (authors "Arul")
 
@@ -18,11 +18,9 @@
 (documentation https://url/to/documentation)
 
 (package
- (name ocaml_ctypes_example)
- (synopsis "Ctypes stubs example")
- (description "Ctypes stubs example with dune")
- (depends ocaml dune)
+ (name based64)
+ (synopsis "Bindings to https://github.com/aklomp/base64")
+ (description "")
+ (depends ocaml dune ctypes alcotest)
  (tags
   (topics "to describe" your project)))
-
-; See the complete stanza docs at https://dune.readthedocs.io/en/stable/dune-files.html#dune-project
