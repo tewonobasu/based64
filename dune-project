@@ -3,24 +3,25 @@
 (formatting (enabled_for ocaml))
 
 (name based64)
+(version 0.1)
 
 (generate_opam_files true)
 
 (source
  (github tewonobasu/based64))
 
-(authors "Arul")
+(authors "Jérémie MARTIN <martin.jeremie42@gmail.com>, Lucas DE ANGELIS <deangelis.lucas@outlook.com>")
 
-(maintainers "Arul")
+(maintainers "Jérémie MARTIN <martin.jeremie42@gmail.com>, Lucas DE ANGELIS <deangelis.lucas@outlook.com>")
 
-(license LICENSE)
+(license MIT)
 
-(documentation https://url/to/documentation)
+(documentation "")
 
 (package
  (name based64)
  (synopsis "Bindings to https://github.com/aklomp/base64")
  (description "")
- (depends ocaml dune ctypes alcotest)
+ (depends ocaml dune ctypes (alcotest :with-test))
  (tags
-  (topics "to describe" your project)))
+  (base64 "C bindings")))

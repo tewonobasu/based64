@@ -1,4 +1,4 @@
 (executable
- (public_name toto)
+ (public_name bench)
  (name main)
- (libraries based64))
+ (libraries based64 base64))

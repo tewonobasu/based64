@@ -1,0 +1,4 @@
+(executable
+ (name benchmark)
+ (modules benchmark)
+ (libraries core core_unix.command_unix core_bench base64 based64))
