@@ -12,7 +12,6 @@ authors: [
 license: "MIT"
 tags: ["base64" "C bindings"]
 homepage: "https://github.com/tewonobasu/based64"
-doc: ""
 bug-reports: "https://github.com/tewonobasu/based64/issues"
 depends: [
   "ocaml" {>= "4.11"}
