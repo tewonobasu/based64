@@ -15,22 +15,25 @@ let rfc4648_tests =
 let test_encode () =
   List.iter
     (fun (c, r) ->
-      Alcotest.check Alcotest.string
-        (sprintf "encode %s" c) (encode c) r)
-        rfc4648_tests
+      Alcotest.check Alcotest.string (sprintf "encode %s" c) (encode c) r)
+    rfc4648_tests
 
 let test_encode_and_decode () =
   List.iter
     (fun (c, _) ->
       Alcotest.check Alcotest.string
-        (sprintf "encode and decode %s" c) (decode (encode c)) c)
-        rfc4648_tests
+        (sprintf "encode and decode %s" c)
+        (decode (encode c))
+        c)
+    rfc4648_tests
 
 let () =
-  let open Alcotest in 
-  run "Based64" [
-    "encode decode", [
-      test_case "encode" `Quick test_encode;
-      test_case "encode and decode" `Quick test_encode_and_decode;
-    ];
-  ]
+  let open Alcotest in
+  run "Based64"
+    [
+      ( "encode decode",
+        [
+          test_case "encode" `Quick test_encode;
+          test_case "encode and decode" `Quick test_encode_and_decode;
+        ] );
+    ]

@@ -1,4 +1,2 @@
 open Ctypes
-
-module Types (F : TYPE) = struct
-end
+module Types (F : TYPE) = struct end
