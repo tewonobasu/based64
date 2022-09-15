@@ -1,8 +1,8 @@
 open Ctypes
 
-let current_size = ref 10
+let current_size = ref 1_000_000
 
-let out = ref (CArray.make char !current_size)
+let out = ref (CArray.make char (!current_size * 2))
 
 
 let helper fn input =
