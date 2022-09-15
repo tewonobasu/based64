@@ -16,10 +16,14 @@
 
 (license MIT)
 
+(documentation "")
+
+
 (package
  (name based64)
  (synopsis "Bindings to https://github.com/aklomp/base64")
  (description "")
  (depends ocaml dune ctypes (alcotest :with-test))
  (tags
-  (base64 "C bindings")))
+  (base64 "C bindings"))
+ (allow_empty))
