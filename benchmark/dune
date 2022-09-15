@@ -2,3 +2,9 @@
  (name benchmark)
  (modules benchmark)
  (libraries core core_unix.command_unix core_bench base64 based64))
+
+(env
+ (dev
+  (flags (:standard -warn-error -A)))
+ (release
+  (ocamlopt_flags (:standard -O3))))
