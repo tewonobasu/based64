@@ -7,7 +7,7 @@ test:
 	dune runtest
 
 bench:
-	dune exec ./benchmark/benchmark.exe --profile=benchmark
+	dune exec --profile=benchmark ./benchmark/benchmark.exe 
 
 clean:
 	dune clean
