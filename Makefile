@@ -6,5 +6,8 @@ all:
 test:
 	dune runtest
 
+benchmark:
+	dune exec ./benchmark/benchmark.exe
+
 clean:
 	dune clean

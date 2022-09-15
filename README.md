@@ -6,7 +6,7 @@ Based64 is a library providing bindings to [aklomp/base64](https://github.com/ak
 
 Here's an example of usage in a utop session:
 
-```shell
+```
 utop # #require "based64";;
 utop # let encoded = Based64.encode "foobar";;
 val encoded : string = "Zm9vYmFy"
