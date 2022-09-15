@@ -16,8 +16,6 @@
 
 (license MIT)
 
-(documentation "")
-
 (package
  (name based64)
  (synopsis "Bindings to https://github.com/aklomp/base64")
