@@ -1,6 +1,6 @@
 # Based64
 
-Based64 is a library providing bindings to [aklomp/base64](https://github.com/aklomp/base64).
+Based64 is an OCaml library providing bindings to [aklomp/base64](https://github.com/aklomp/base64).
 
 ## Usage
 
