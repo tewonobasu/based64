@@ -1,4 +1,4 @@
-.PHONY: all test clean
+.PHONY: all test bench clean
 
 all:
 	dune build
@@ -6,8 +6,8 @@ all:
 test:
 	dune runtest
 
-benchmark:
-	dune exec ./benchmark/benchmark.exe
+bench:
+	dune exec ./benchmark/benchmark.exe --profile=benchmark
 
 clean:
 	dune clean
