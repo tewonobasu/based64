@@ -16,7 +16,7 @@
 
 (license MIT)
 
-(documentation "")
+(documentation "https://github.com/tewonobase/based64/README.md")
 
 (package
  (name based64)
