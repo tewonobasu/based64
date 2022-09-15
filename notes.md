@@ -26,5 +26,6 @@ There are examples in the async_ssl (using dune) and lz4 (using ocamlbuild) pack
 - ajouter une partie "installation" au readme avec "The bindings are available via OPAM: opam install based64"
 - on pourrait forcer l'install de base64 la librairie C avec les packages opam conf-xxx type https://opam.ocaml.org/packages/conf-libdw/
 
-
 To use perf: https://discuss.ocaml.org/t/ann-perf-demangling-of-ocaml-symbols-a-short-introduction-to-perf/7143
+
+Check lower bounds: https://blog.sim642.eu/2022/03/13/ocaml-dependencies-lower-bounds-ci.html

@@ -22,8 +22,8 @@
  (description "")
  (depends
   (ocaml (>= 4.11))
-  dune
-  ctypes
+  (dune (>= 3.3))
+  (ctypes (>= 0.15))
   (alcotest :with-test))
  (tags
   (base64 "C bindings"))

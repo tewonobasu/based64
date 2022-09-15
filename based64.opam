@@ -15,8 +15,8 @@ homepage: "https://github.com/tewonobasu/based64"
 bug-reports: "https://github.com/tewonobasu/based64/issues"
 depends: [
   "ocaml" {>= "4.11"}
-  "dune" {>= "3.3"}
-  "ctypes"
+  "dune" {>= "3.3" & >= "3.3"}
+  "ctypes" {>= "0.15"}
   "alcotest" {with-test}
   "odoc" {with-doc}
 ]
