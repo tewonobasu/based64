@@ -16,8 +16,6 @@
 
 (license MIT)
 
-(documentation "https://github.com/tewonobase/based64/README.md")
-
 (package
  (name based64)
  (synopsis "Bindings to https://github.com/aklomp/base64")
