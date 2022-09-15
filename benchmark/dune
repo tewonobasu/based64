@@ -1,6 +1,7 @@
 (executable
  (name benchmark)
  (modules benchmark)
+ (enabled_if (= %{profile} benchmark))
  (libraries core core_unix.command_unix core_bench base64 based64))
 
 (env
