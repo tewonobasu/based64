@@ -24,7 +24,7 @@
   (ocaml (>= 4.11))
   (dune (>= 3.3))
   (ctypes (>= 0.15))
-  (alcotest :with-test))
+  (alcotest (and (>= 0.8.0) :with-test)))
  (tags
   (base64 "C bindings"))
  (allow_empty))
