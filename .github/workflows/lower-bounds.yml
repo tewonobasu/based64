@@ -1,0 +1,45 @@
+# From https://blog.sim642.eu/2022/03/13/ocaml-dependencies-lower-bounds-ci.html
+on:
+  push:
+  pull_request:
+
+jobs:
+  lower-bounds:
+    strategy:
+      matrix:
+        os:
+          - ubuntu-latest
+        ocaml-compiler:
+          - 4.11.1
+
+    runs-on: ${{ matrix.os }}
+
+    env:
+      OPAMCONFIRMLEVEL: unsafe-yes # allow opam depext to yes package manager prompts
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up OCaml ${{ matrix.ocaml-compiler }}
+        uses: ocaml/setup-ocaml@v2
+        with:
+          ocaml-compiler: ${{ matrix.ocaml-compiler }}
+
+      - name: Install dependencies
+        run: opam install . --deps-only --with-test
+
+      - name: Install opam-0install
+        run: opam install opam-0install
+
+      - name: Downgrade dependencies
+        # Option 1: allow OCaml version downgrade
+        run: opam install --unlock-base $(opam exec -- opam-0install --prefer-oldest --with-test based64)
+        # Option 2: forbid OCaml version downgrade (specify ocaml-base-compiler again to prevent it from being downgraded)
+        # run: opam install $(opam exec -- opam-0install --prefer-oldest --with-test based64 ocaml-base-compiler.${{ matrix.ocaml-compiler }})
+
+      - name: Build
+        run: opam exec -- dune build
+
+      - name: Test
+        run: opam exec -- dune runtest

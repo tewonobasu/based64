@@ -3,16 +3,16 @@
 (formatting (enabled_for ocaml))
 
 (name based64)
-(version 1.0)
+(version 1.0.1)
 
 (generate_opam_files true)
 
 (source
  (github tewonobasu/based64))
 
-(authors "Jérémie MARTIN <martin.jeremie42@gmail.com>, Lucas DE ANGELIS <deangelis.lucas@outlook.com>")
+(authors "Jérémie MARTIN <martin.jeremie42@gmail.com>" "Lucas DE ANGELIS <deangelis.lucas@outlook.com>")
 
-(maintainers "Jérémie MARTIN <martin.jeremie42@gmail.com>, Lucas DE ANGELIS <deangelis.lucas@outlook.com>")
+(maintainers "Jérémie MARTIN <martin.jeremie42@gmail.com>" "Lucas DE ANGELIS <deangelis.lucas@outlook.com>")
 
 (license MIT)
 
