@@ -1,3 +1,6 @@
 _build/
 .vscode/
+# Used to prepare commit messages
 commit.txt
+# Used to fix the build on other platforms
+Dockerfile*
