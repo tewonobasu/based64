@@ -29,6 +29,15 @@ https://hub.docker.com/r/ocamlpro/ocaml
 To use perf: https://discuss.ocaml.org/t/ann-perf-demangling-of-ocaml-symbols-a-short-introduction-to-perf/7143  
 Check lower bounds: https://blog.sim642.eu/2022/03/13/ocaml-dependencies-lower-bounds-ci.html  
 To prevent docker from caching layers, add an argument (can be anything) at the point where you want it to stop using layers  
+Might help with the objcopy issue? https://tratt.net/laurie/blog/2022/whats_the_most_portable_way_to_include_binary_blobs_in_an_executable.html  
+https://doc.sherlocode.com/  
+https://sherlocode.com/  
+https://nullprogram.com/blog/2017/08/20/  
+Tool that parses the opam files of all the conf-* packages and then you can search through them, for example search a command with or without an os/architecture  
+A library that was changed to not require objcopy anymore: https://github.com/janestreet/ocaml_plugin/commit/6d09fe6f3938fef5e103b5824356c42d00393c9e  
+objcopy on arm? https://github.com/mirage/xen/commit/010b823195b8c32559c6fde101d51a21458ef351  
+https://github.com/mirage/xen/commit/b199c44afa3a0d18d0e968e78a590eb9e69e20ad  
+
 
 ## Make the opam CI work
 

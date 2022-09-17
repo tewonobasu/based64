@@ -1,5 +1,6 @@
 # -fPIC makes linking work on Fedora
-CFLAGS += -std=c99 -O3 -Wall -Wextra -pedantic -fPIC
+# CFLAGS += -std=c99 -O3 -Wall -Wextra -pedantic -fPIC
+CFLAGS += -fPIC -std=c99 -O3  -march=native -Wall -Wextra
 
 # Set OBJCOPY if not defined by environment:
 OBJCOPY ?= objcopy
@@ -58,14 +59,20 @@ endif
 all: lib/libbase64.o lib/libbase64.a lib/libbase64.so
 
 lib/libbase64.o: $(OBJS)
+	$(info Before calling ld)
+	stat -c '%a - %n' lib/*
 	$(LD) -r -o $@ $^
-	$(OBJCOPY) --keep-global-symbols=lib/exports.txt $@
+#	$(OBJCOPY) --keep-global-symbols=lib/exports.txt $@
 
 lib/libbase64.a: lib/libbase64.o
+	$(info Before calling ar)
+	stat -c '%a - %n' lib/*
 	ar crs lib/libbase64.a lib/libbase64.o
 
 lib/libbase64.so: lib/libbase64.o
-	gcc -shared lib/libbase64.o -o lib/libbase64.so
+	$(info Before calling gcc -shared)
+	stat -c '%a - %n' lib/*
+	gcc -fPIC -o lib/libbase64.so lib/libbase64.o -shared
 
 lib/config.h:
 	@echo "#define HAVE_AVX2   $(HAVE_AVX2)"    > $@
