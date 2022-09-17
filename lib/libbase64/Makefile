@@ -1,4 +1,5 @@
-CFLAGS += -std=c99 -O3 -Wall -Wextra -pedantic
+# -fPIC makes linking work on Fedora
+CFLAGS += -std=c99 -O3 -Wall -Wextra -pedantic -fPIC
 
 # Set OBJCOPY if not defined by environment:
 OBJCOPY ?= objcopy
@@ -54,10 +55,7 @@ endif
 
 .PHONY: all analyze clean
 
-all: bin/base64 lib/libbase64.o lib/libbase64.a lib/libbase64.so
-
-bin/base64: bin/base64.o lib/libbase64.o
-	$(CC) $(CFLAGS) -o $@ $^
+all: lib/libbase64.o lib/libbase64.a lib/libbase64.so
 
 lib/libbase64.o: $(OBJS)
 	$(LD) -r -o $@ $^
@@ -96,4 +94,4 @@ analyze: clean
 	scan-build --use-analyzer=`which clang` --status-bugs make
 
 clean:
-	rm -f bin/base64 bin/base64.o lib/libbase64.o lib/config.h $(OBJS)
+	rm -f lib/libbase64.o lib/config.h $(OBJS)
