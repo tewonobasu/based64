@@ -1,9 +1,11 @@
 .PHONY: all test bench clean
 
-all:
+all: build test clean
+
+build:
 	dune build
 
-test:
+test: build
 	dune runtest
 
 bench:
