@@ -188,4 +188,4 @@ make: *** [Makefile:9: test] Error 1
 ```
 
 Might help https://discuss.ocaml.org/t/how-to-debug-a-terminated-by-signal-sigsegv-address-boundary-error/5936  
-Valgrind reports some memory corruption, I'm trying to see where it comes from. A simple executable which encodes foobar doesn't have any issue.  
+Valgrind reports some memory corruption, I'm trying to see where it comes from. A simple executable which encodes foobar doesn't have any issue.
