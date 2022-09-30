@@ -99,38 +99,6 @@ base64_stream_decode
 	#include "lib_openmp.c"
 #endif
 
-char*
-base64_encode_ret
-	( const char	*src
-	, size_t	 srclen
-	, int		 flags
-	)
-{
-	char out[10000] = "";
-
-	size_t s;
-	size_t t;
-	struct base64_state state;
-
-	#ifdef _OPENMP
-	if (srclen >= OMP_THRESHOLD) {
-		base64_encode_openmp(src, srclen, out, outlen, flags);
-		return;
-	}
-	#endif
-
-	// Init the stream reader:
-	base64_stream_encode_init(&state, flags);
-
-	// Feed the whole string to the stream reader:
-	base64_stream_encode(&state, src, srclen, out, &s);
-
-	// Finalize the stream by writing trailer if any:
-	base64_stream_encode_final(&state, out + s, &t);
-
-	return out;
-}
-
 void
 base64_encode
 	( const char	*src
