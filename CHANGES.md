@@ -1,4 +1,4 @@
-## v1.0.0
+## v1.0
 
 - Add CI check for lower bounds, the code comes from https://blog.sim642.eu/2022/03/13/ocaml-dependencies-lower-bounds-ci.html
 - Make the library only available on Linux, as the builds on Windows and Mac OS currently fail

@@ -3,7 +3,7 @@
 (formatting (enabled_for ocaml))
 
 (name based64)
-(version 1.0.0)
+(version 1.0)
 
 (generate_opam_files true)
 
