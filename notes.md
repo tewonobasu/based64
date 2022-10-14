@@ -189,3 +189,5 @@ make: *** [Makefile:9: test] Error 1
 
 Might help https://discuss.ocaml.org/t/how-to-debug-a-terminated-by-signal-sigsegv-address-boundary-error/5936  
 Valgrind reports some memory corruption, I'm trying to see where it comes from. A simple executable which encodes foobar doesn't have any issue.
+
+About publishing on opam: I think the rule is to avoid changing stuff that's on opam, but if your package isn't yet on opam, it's okay to force push around to update the files and pass the tests
